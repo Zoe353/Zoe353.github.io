@@ -4,8 +4,6 @@ title: "Zhimin Sun, Camera Projection Matrix and Fundamental Matrix Estimation w
 markdown: kramdown
 date: 2020-04-27
 ---
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 
 Hi, this blog is to record the project related to Camera projection matrix and fundamental matrix estimation.
 
