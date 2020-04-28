@@ -12,4 +12,4 @@ Def.:For a pinhole camera model, the camera matrix is ${P} \in {R}$ <sup> $3 \ti
 
 The camera matrix can also be decomposed into intrinsic parameters K and entrinsic parameter $R^T[I|-t]$.
 
-P = K$R^T[I|-t]$.
+<li> P = K$R^T[I|-t]$. </li>
