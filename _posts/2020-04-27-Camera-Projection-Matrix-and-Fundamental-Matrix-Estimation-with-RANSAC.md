@@ -11,9 +11,9 @@ Part 1: Camera projection matrix
 
 Def.:For a pinhole camera model, the camera matrix is $P \in R^{3 \times 4}$ is a projective mapping from world(3D) to pixel(2D) coordinates defined up to a scale.
 
-The camera matrix can also be decomposed into intrinsic parameters K and entrinsic parameter $$R^T \[I|-t\]$$.
+The camera matrix can also be decomposed into intrinsic parameters K and entrinsic parameter $$R^T \[ I|-t \] $$.
 
-$$P = K R^T \[ I|-t \]$$ 
+$$P = K R^T \[ I|-t \] $$ 
 
 Look more carefully into what each individuals parts of the decomposed matrix mean.
 <li>The homogenous vector coordinates $(x_w,y_w,z_w,1)$ of $X_w$ indicate the position of a point in 3D space in the world coordinate system.</li> 
@@ -30,9 +30,9 @@ Optimizing the reprojection loss using Levenberg-Marquardt requires a good initi
 
 Part 2: Fundamental matrix
 
-Def: Fundamental matrix(F) maps corresponding 2D points from two images of the same scene.
+Def: Fundamental matrix($$F$$) maps corresponding 2D points from two images of the same scene.
 
-To estimate F we can minimize the line-to-point distance between the point $$x_0$$ and the line $$Fx_1$$, for all matching points $$(x_0, x_1)$$. This makes estimating the fundamental matrix a least squares problem.
+To estimate $$F$$ we can minimize the line-to-point distance between the point $$x_0$$ and the line $$Fx_1$$, for all matching points $$(x_0, x_1)$$. This makes estimating the fundamental matrix a least squares problem.
 
 
 
