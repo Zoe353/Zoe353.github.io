@@ -30,7 +30,7 @@ An intuitive way to understand this is to think about how aligning the axes of t
 
 A camera projection matrix maps points from 3D into 2D. We can use this to estimate its parameters. Assume that we have N known 2D-3D correspondences for a set of points, that is, for points with index i=1...N we have both access to the respective 3D corrdinates x<sub>w</sub><sup>i</sup> and 2D coordinates x<sup>i</sup>. Let P<sup>^</sup> be an estimation for the camera projection matrix. We can determine how accurate the estimation is by measuring the reprojection error between the 3D points projected into 2D and the known 2D points, both in homogeneous coordinates.
 
-Optimizing the reprojection loss using 
+Optimizing the reprojection loss using $$x_i^w$$
 
 
 
