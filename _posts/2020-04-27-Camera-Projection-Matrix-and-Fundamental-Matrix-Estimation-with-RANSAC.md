@@ -25,4 +25,4 @@ Insert the matrix represention of the projection matrix.
 
 An intuitive way to understand this is to think about how aligning the axes of the world coordinate system to the ones of the camera coordinate system can be done with a rotation and a translation.
 
-A camera projection matrix maps points from 3D into 2D. We can use this to estimate its parameters. Assume that we have N known 2D-3D correspondences for a set of points, that is, for points with index i=1...N we have both access to the respective 3D corrdinates x<sub>w</sub><sup>i</sup> and 2D coordinates x<sup>i</sup>.  $$x_i^w$$
+A camera projection matrix maps points from 3D into 2D. We can use this to estimate its parameters. Assume that we have N known 2D-3D correspondences for a set of points, that is, for points with index i=1...N we have both access to the respective 3D corrdinates x<sub>w</sub><sup>i</sup> and 2D coordinates x<sup>i</sup>.$$x_i^w$$
