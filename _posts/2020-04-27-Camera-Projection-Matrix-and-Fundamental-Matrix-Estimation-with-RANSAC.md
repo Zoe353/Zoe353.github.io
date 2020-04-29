@@ -11,16 +11,14 @@ Part 1: Camera projection matrix
 
 Def.:For a pinhole camera model, the camera matrix is $P \in R^{3 \times 4}$ is a projective mapping from world(3D) to pixel(2D) coordinates defined up to a scale.
 
-The camera matrix can also be decomposed into intrinsic parameters K and entrinsic parameter $$R^T [ I|-t ]$$.
+The camera matrix can also be decomposed into intrinsic parameters K and entrinsic parameter.
 
 $$ P = K R^T [ I | -t ] $$
 
 Look more carefully into what each individuals parts of the decomposed matrix mean.
 <li>The homogenous vector coordinates $(x_w,y_w,z_w,1)$ of $X_w$ indicate the position of a point in 3D space in the world coordinate system.</li> 
-<li>The matrix $$ [I|-t] $$ represents a translation</li>
+<li>The matrix $[I|-t]$ represents a translation</li>
 <li>matrix $R^T$ represents a rotation.</li>
-
-Insert the matrix represention of the projection matrix.
 
 An intuitive way to understand this is to think about how aligning the axes of the world coordinate system to the ones of the camera coordinate system can be done with a rotation and a translation.
 
