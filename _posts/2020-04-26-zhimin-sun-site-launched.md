@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Zhimin Sun, Launches Site"
+title: "Launches Site"
 date: 2020-04-26
 ---
 

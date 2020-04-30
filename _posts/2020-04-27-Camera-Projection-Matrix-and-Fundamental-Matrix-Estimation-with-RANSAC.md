@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Zhimin Sun, Camera Projection Matrix and Fundamental Matrix Estimation with RANSAC"
+title: "Camera Projection Matrix and Fundamental Matrix Estimation with RANSAC"
 markdown: kramdown
 date: 2020-04-27
 ---
