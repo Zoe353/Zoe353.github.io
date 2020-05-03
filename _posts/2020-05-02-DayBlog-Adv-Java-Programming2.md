@@ -33,9 +33,8 @@ public class Main(){
 }
 ```
 At this moment, the codes to implement the functional interface is quite long and messy considering all it does id 
-provide one new line of functionality. Lambdas were introduced to improve this. 
- 
-2. Implementing lambdas in Java  
+provide one new line of functionality. Lambdas were introduced to improve this.  
+2.Implementing lambdas in Java  
 Lambdas provide a short and simple way to implement functional interfaces in Java.  
 ```
 public class Main(){ 
@@ -56,8 +55,7 @@ public class Main(){
     }
 }
 ```  
-
-3. Using method references in Java  
+3.Using method references in Java  
 Method references are a shorthand way of writing a certain type of lambda expression. 
  
 ```
@@ -90,7 +88,7 @@ public class Main{
 }
 
 ```  
-4. Streams in Java  
+4.Streams in Java  
 Streams provide a clean and simple way to iterate over a collection in Java instead of using a forEach loop.  
 Streams allow functional programming techniques to be used.  
 When we use a forEach loop in Java, it uses something called external iteration. What actually happens under the hood is an iterator 
@@ -114,8 +112,9 @@ books.stream().filter(book -> {
 The filter method used in this example is a lazy method. All it does is adds books with authors beginning with J.
 to the new string. The forEach method is a eager method. We could add more lazy method, however, we could not add any more
 eager methods.  
-5. Parallel streams  
+5.Parallel streams  
 One adv is that we can run iterations in parallel.  
+
 ```
 books.parallelstream().filter(book -> {
 
@@ -123,8 +122,8 @@ books.parallelstream().filter(book -> {
     //more filters
     //more filters
 .forEach(System.out::println);
+```
 
-```  
 Although it is very easy to use parallel streams, this doesn't mean that we necessarily should. There is only 
 a performance impact when we are using a very large amount of data. Also this code dependent on how may cores are available.
 
