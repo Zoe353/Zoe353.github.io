@@ -32,7 +32,8 @@ public class Main(){
 }
 ```
 At this moment, the codes to implement the functional interface is quite long and messy considering all it does id 
-provide one new line of functionality. Lambdas were introduced to improve this.  
+provide one new line of functionality. Lambdas were introduced to improve this. 
+ 
 2. Implementing lambdas in Java  
 Lambdas provide a short and simple way to implement functional interfaces in Java.  
 ```
@@ -54,8 +55,10 @@ public class Main(){
     }
 }
 ```  
+
 3. Using method references in Java  
-Method references are a shorthand way of writing a certain type of lambda expression.  
+Method references are a shorthand way of writing a certain type of lambda expression. 
+ 
 ```
 public class Square{
     int sideLength;
@@ -97,6 +100,7 @@ Requires boilerplate code
 Difficult to read meaning  
 Hard to abstract away from behavior  
 Streams bring the solution to those issues. They use internal iteration instead of external iteration.  
+
 ```
 books.stream().filter(book -> {
 
