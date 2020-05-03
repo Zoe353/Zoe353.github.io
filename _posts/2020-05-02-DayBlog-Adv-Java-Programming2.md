@@ -11,6 +11,7 @@ Part3: Functional Programming in Java
 1. Functional interfaces in Java  
 A functional interface is an interface that has only one abstract method.  
 ```
+@FunctionalInterface
 public interface GreetingMessage{  
     public abstract void greer(String name);
 }
