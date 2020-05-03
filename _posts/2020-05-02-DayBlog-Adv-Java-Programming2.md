@@ -8,7 +8,7 @@ date: 2020-05-02
 Hi, today is 05/02/2020, Saturday.
 
 Part3: Functional Programming in Java  
-1. Functional interfaces in Java  
+1.Functional interfaces in Java  
 A functional interface is an interface that has only one abstract method.  
 ```
 @FunctionalInterface
