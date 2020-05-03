@@ -12,32 +12,29 @@ Def: Generics are a way to tell a compiler what type of object a collection can 
 Generic methods in Java are methods that allow you to create a new type parameter just for that method. This is useful 
 if you are writing a method but want to be flexible about the type of objects you can pass in.
 
-'''
+```
 public static List arayToList(Object[] array, List<Object> list){  
     for(Object object: array){  
         list.add(object);
     }  
     return list; 
 } 
-'''  
+```
 It can compiler without error, but using objects means that we lose type safety.  
 The solution is to create a new type of variable T. Because T is a generic type, it doesn't matter
 what type I use, as long as it is the same type every time I use it. The type of the array list can also be a supertype
 of the type of the array.  
-'''
+```
 public static <T> List<T> arrayToList(T[] array, List<T> list){  
     for(T object: array){  
         list.add(object);
     }  
     return list;
 }
-
-
-
-'''  
+```
 2.Using varargs(variable-length arguments)  
 varargs allows us to write a method that takes a variable number of arguments.  
-'''
+```
 private static void printShoppingList(String... items){
     System.out.println("SHOPPING LIST");  
     for(int i = 0; i < items.length; i++){  
@@ -45,28 +42,28 @@ private static void printShoppingList(String... items){
     }  
     System.out.println();
 }
-'''  
+```  
 3.The substitution principle  
 It's an important concept in object-oriented programming, which allows us to write maintainable and reusable code.  
 It means that if you have a variable of a given type, you can assign it to a value that is a subtype of that type. But the principle does not apply
 with type of lists.  
 4.Using wildcard in genetic programming  
 A wildcard is essentially an unknown type, and can give you more flexibility when writing methods.  
-'''  
+```  
 static void printBuildings(List<?extends Building> buildings){  
     for(int i = 0; i < buildings.size(); i++){  
         System.out.println(buildings.get(i).toString() + " " + (i+1));
     }  
     System.out.println();  
 }
-'''  
+```
 This means I can now pass in lists of any type that extends the building class.  
 Wildcards can also be used to specify that super types can be used when a subtype is specified.  
-'''
+```
 static void addHouseToList(<?super House> buildings){  
 
 }
-'''  
+``` 
 Now I can pass in a list of buildings to this method, because Building is a super type of House type.
 
 Part2: Data structures  
@@ -77,7 +74,7 @@ on our exact requirements.
 There are some key factors to bear in mind: Ordering(Is the order important?); Duplicates(allowed?); 
 Speed(how fast it will be to perform operations); Memory used;  
 In Java, there is a set of interfaces that define different types pf collection. At the very top of the hierarchy is iterable.
-All types of collection implement iterable.And it declares the foreach method. Then, there is the collection interface, which extends iterable.
+All types of collection implement iterable. And it declares the foreach method. Then, there is the collection interface, which extends iterable.
 This interface declares all of the methods that every collection must have. There are no classes that are a concrete
 implementation of collection directly. Before we get to concrete classes, there is another layer of interfaces, which includes set, list and Queue.  
 Sets are a type of collection that do not allow duplicate elements. They are also unordered.  
@@ -90,7 +87,9 @@ to be a part of the collections framework in Java.
 A linked list is a doubly linked collection of elements. Each entry in the list also hold a reference to the address of the next and 
 the precious item in the list.  
 Advantages: they are quick for inserting and removing elements in the middle of a list.  
-'''
+
+```
+
 public class LinkedListExample{  
 
     public static void main(String[] args){  
@@ -103,16 +102,16 @@ public class LinkedListExample{
         System.out.println(myList);   
     }
 }
-'''  
+```
+
 Disadvantages: Linked lists take up more memory than array lists. Because in a linked list each entry contains a reference to the list
 and also to the next and previous elements.  
 3.Implement a queue  
 Example: using a linkedlist(add(), poll())  
 4.HashMap  
 Key-value  
-'''
+```
 public class HashMapExample{  
-
     public static void main(String[] args){  
         HashMap<String, Integer> phonebook = new HashMap<>();  
         phonebook.put("Kevin", 12345);  
@@ -126,7 +125,7 @@ public class HashMapExample{
         phonebook.clear(); //clear all
     }
 }
-'''  
+```  
 The output is not printed out in the same order that we added it. This is because HashMaps is unordered. Entries are 
 stored by their contents, not by their positions. Also HashMaps do not allow duplicate keys. HashMaps allow you to have 
 null as the value for a key.  
