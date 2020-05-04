@@ -11,16 +11,16 @@ $E$ = set of edges $m = |E|$ $E \in V \times V without {(v,v)}$ don't have loops
 Directed Graph  $\overrightarrow{G} = (V, \overrightarrow{E})$  
 Undirected Graph  
 
-Given: $G^{\rightarrow} = (V, E^{\rightarrow})$  
+Given: $\overrightarrow{G} = (V, \overightarrow{E})$  
 Goal: The shortest distance from vertex $s$ to vertex $v$.  
-Def: Distance between two vertices as $d(s,v) = dist(s,v) = min_{P} \{ \sum_{e \in P} w(e)$, $P = {s \rightarrow v_1 \rightarrow ... \rightarrow v}$  
+Def: Distance between two vertices as $d(s,v) = dist(s,v) = min_{P} \{ \sum_{e \in P} w(e) \}$, $P = {s \rightarrow v_1 \rightarrow ... \rightarrow v}$  
 
 * Dijkstra's algorithm  
-Find: distance from a vertex $s$ to any other vertex $v$ on $G^{\rightarrow}$ directed graph with $w(w) \geq 0$.  
+Find: distance from a vertex $s$ to any other vertex $v$ on $\overrightarrow{G}$ directed graph with $w(w) \geq 0$.  
 Running time $O(|V| + |E| .log(|V|))$  
 
 * DP shortest path  
-Input: $G^{\rightarrow} = (V, E^{\rightarrow})$ w: $E^{\rightarrow} \rightarrow R$ 
+Input: $\overrightarrow{G} = (V, \overrightarrow{E})$ w: $\overrightarrow{E} \rightarrow R$ 
 $s \in V$ source  
 Output: $dist(s,v)$ for all $v \in   
 Step1:   
