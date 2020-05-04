@@ -11,7 +11,7 @@ $E$ = set of edges $m = |E|$ $E \in V \times V without {(v,v)}$ don't have loops
 Directed Graph  $\overrightarrow{G} = (V, \overrightarrow{E})$  
 Undirected Graph  
 
-Given: $\overrightarrow{G} = (V, \overightarrow{E})$  
+Given: $\overrightarrow{G} = (V, \overrightarrow{E})$  
 Goal: The shortest distance from vertex $s$ to vertex $v$.  
 Def: Distance between two vertices as $d(s,v) = dist(s,v) = min_{P} \{ \sum_{e \in P} w(e) \}$, $P = {s \rightarrow v_1 \rightarrow ... \rightarrow v}$  
 
@@ -22,7 +22,7 @@ Running time $O(|V| + |E| .log(|V|))$
 * DP shortest path  
 Input: $\overrightarrow{G} = (V, \overrightarrow{E})$ w: $\overrightarrow{E} \rightarrow R$ 
 $s \in V$ source  
-Output: $dist(s,v)$ for all $v \in   
+Output: $dist(s,v)$ for all $v \in  
 Step1:   
 $D(i,v)$ is the shortest distance from $s$ to $v$ visiting at most $i$ vertices after $s$ and before $v$, $v \in V, 0\leq i \leq n-2$  
 Step2:   
