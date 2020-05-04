@@ -8,7 +8,7 @@ date: 2020-05-03
 $ G = (V,E) $ 
 $V$ = set of vertices $n = |V|$  
 $E$ = set of edges $m = |E|$ $E \in V \times V without {(v,v)}$ don't have loops  
-Directed Graph  $G^{\rightarrow} = (V, E^{\arrowarrow})$  
+Directed Graph  $\overrightarrow{G} = (V, \overrightarrow{E})$  
 Undirected Graph  
 
 Given: $G^{\rightarrow} = (V, E^{\rightarrow})$  
