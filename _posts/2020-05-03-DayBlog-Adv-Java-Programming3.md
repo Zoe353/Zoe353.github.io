@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "05/03/2020-Adv.-Java-Programming"
+title: "05/03/2020-Adv.-Java-Programming-Modular-Programming"
 markdown: kramdown
 date: 2020-05-03
 ---
