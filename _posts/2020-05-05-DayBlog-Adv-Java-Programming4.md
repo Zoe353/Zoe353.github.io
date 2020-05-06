@@ -5,7 +5,7 @@ markdown: kramdown
 date: 2020-05-05
 ---
 
-Threads allow multiple actions to be performed at the same time inside a single process. Whe nwe have a machine 
+Threads allow multiple actions to be performed at the same time inside a single process. When we have a machine 
 with multiple cores, we can run multiple tasks at the same time.  
 In programming, a single process can have multiple threads working at the same time. Each thread has its own stack and its own local variables. Threads inside 
 the same process are more closely connected, they share memory with other threads. All of the threads have the same access to global variables.  
