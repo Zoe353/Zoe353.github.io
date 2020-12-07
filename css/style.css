@@ -68,7 +68,7 @@ iframe {font-family: 'Merriweather', Georgia, Times; font-size: 16px;}
 
 /* Projects */
 .left {
-	width: 500px;
+	width: 40%;
     height: 400px;
     float: left;
     text-align: center;
@@ -78,7 +78,7 @@ iframe {font-family: 'Merriweather', Georgia, Times; font-size: 16px;}
 	width: 300px;
     height: 400px;
     float: right;
-    text-align: center;
+    text-align: left;
 }
 
 
