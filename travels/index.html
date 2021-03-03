@@ -4,7 +4,7 @@ title: Zhimin Sun's Travels
 ---
 
     <h1>{{ page.title }}</h1>
-	<ul class="travels">
+	<ul class="post">
 
 	  {% for travelpost in site.posts %}
 	    <li><span>{{ travelpost.date | date_to_string }}</span> » <a href="{{ travelpost.url }}" title="{{ travelpost.title }}">{{ travelpost.title }}</a></li>
