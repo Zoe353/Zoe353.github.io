@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Atlanta"
+title: "Los Angeles"
 markdown: kramdown
 date: 2020-04-29
 ---
