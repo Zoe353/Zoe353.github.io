@@ -4,34 +4,36 @@ title: Zhimin Sun's Projects
 ---
 
     <div class="cv">
+		{% for post in site.projectposts %}
+		  <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	    {% endfor %}
 
+		<!--<h1>Latest Projects</h1>	-->
 
-		<h1>Latest Projects</h1>	
+		<!--<div name='project1'>-->
+			<!--<div class = 'left' name = "mydiv" id="mydiv">-->
+				<!--<iframe src="https://player.vimeo.com/video/486148555"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>-->
+				<!---->
+			<!--</div>-->
+			<!---->
+			<!--<div class = 'right' name = "mydiv" id="mydiv">-->
+				<!---->
+				<!--<p>We are trying to look into the patterns of diversified font usage, with the intention to create an integrated visualization that explores how often fonts are used together over time with additional information of the font contexts to provide design insights. </p>-->
+				<!--<p>7450 project made by Group Catnip; Video made by Shuyu Gao on Vimeo </p>-->
+			<!--</div>-->
+		<!--</div>-->
 
-		<div name='project1'>
-			<div class = 'left' name = "mydiv" id="mydiv">
-				<iframe src="https://player.vimeo.com/video/486148555"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-				
-			</div>
-			
-			<div class = 'right' name = "mydiv" id="mydiv">
-				
-				<p>We are trying to look into the patterns of diversified font usage, with the intention to create an integrated visualization that explores how often fonts are used together over time with additional information of the font contexts to provide design insights. </p>
-				<p>7450 project made by Group Catnip; Video made by Shuyu Gao on Vimeo </p>
-			</div>
-		</div>
-
-		<div name='project2'>
-			<div class = 'left' name = "mydiv" id="mydiv">
-				<iframe src="https://player.vimeo.com/video/486148555"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-				
-			</div>
-			
-			<div class = 'right' name = "mydiv" id="mydiv">
-				
-				<p>We are trying to look into the patterns of diversified font usage, with the intention to create an integrated visualization that explores how often fonts are used together over time with additional information of the font contexts to provide design insights. </p>
-				<p>7450 project made by Group Catnip; Video made by Shuyu Gao on Vimeo </p>
-			</div>
-		</div>
+		<!--<div name='project2'>-->
+			<!--<div class = 'left' name = "mydiv" id="mydiv">-->
+				<!--<iframe src="https://player.vimeo.com/video/486148555"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>-->
+				<!---->
+			<!--</div>-->
+			<!---->
+			<!--<div class = 'right' name = "mydiv" id="mydiv">-->
+				<!---->
+				<!--<p>We are trying to look into the patterns of diversified font usage, with the intention to create an integrated visualization that explores how often fonts are used together over time with additional information of the font contexts to provide design insights. </p>-->
+				<!--<p>7450 project made by Group Catnip; Video made by Shuyu Gao on Vimeo </p>-->
+			<!--</div>-->
+		<!--</div>-->
 	
 	</div><!-- /.blurb -->
