@@ -1,4 +1,4 @@
 name: Zhimin Sun
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-           /projects/:year/:month/:day/:title
+           /travels/:year/:month/:day/:title
