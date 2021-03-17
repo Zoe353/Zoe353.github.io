@@ -20,7 +20,7 @@ The architecture of the GShare branch predictor
 * The Global History Register is a G bits wide shift register. The most recent branch is stored in the least-significant-bit of GHR, and a value of 1 denootes a taken branch. The initial value of the GHR is 0.
 * The Pattern Table (PT) contains 2<sup>G</sup> smith counters. The Predictor XORs the GHR with bits [2+G-1:2] of the branch PC to index into the PHT.
 * Each Smith Counter in the PHT is 2-bits wide and initialized to 0b01, the Weakly-NOT-TAKEN state.  
-In summary,
+<b>In summary</b>,
 * GHR <b>XOR</b> [2+G-1:2] of branch PC = index of PT, then using the index, we could find the prediction state in the PT.
 * After getting the branch prediction,we should shift the Global History Registor and update the Smith Counter.
     * If actual branch behavior is TAKEN, the Smith Counter should be updated (00->01, 01->10, 10->11, 11->11)
@@ -35,7 +35,7 @@ history register, and a value of 1 denotes a taken branch. All entries of the hi
 The predictor uses bits [2+G-1:2] of the branch address (PC) to index into the History Table. 
 * The Pattern Table (PT) ccontains 2<sup>P</sup> smith counters. Each Smith Counter in the PT is 2-bits wide and initialized to 0b01, the Weakly-NOT-TAKEN state.
 The value read from the History Table is used to index into the pattern table.  
-In summary,
+<b>In summary</b>,
 * [2+G-1:2] of the branch address = index into the History Table  
 The value read from the History Table = index into the pattern table
 * After getting the prediction from Pattern Table, we should update shift register in History Table and the Smith Counter in Pattern Table.
@@ -48,11 +48,11 @@ perceptron branch predictors are able to make use of long branch histories and d
 * The Global History Register is G bits wide.
 * The perceptron table can hold 2<sup>P</sup> perceptrons. Each perceptron has G+1 weights, which can have a value in the range [-(\theta+1),\theta], where $\theta=1.93 \times G + 14$.  
 Using bits [(2+P-1):2] of branch address to index into perceptron table.  
-In summary,
+<b>In summary</b>,  
 y = w<sub>0</sub> \times x<sub>0</sub> + w<sub>1</sub> \times x<sub>1</sub> + ... + w<sub>G</sub> \times x<sub>G</sub>
 If sign(y) != t or abs(s) <= theta, we should update each w<sub>i</sub> by w<sub>i</sub> = w<sub>i</sub> + t * x[i],
 and then shift the global history register.
 
-######Reference
+###### Reference  
 Project2 in CS6290 Advanced/High performance computing architecture
 
