@@ -9,9 +9,9 @@ This blog is to record my project2 in Advanced/High Performance Computer Archite
 
 ##### Introduction
 Stalls due to control flow hazards and the presence of instructions, such as, function calls, direct and in-direct jump, returns, etc. that modify
-the control flow of a program, are detrimental to a pipelined processor's performance.To mitigate these stalls, various branch prediction techniques are used.
+the control flow of a program, are detrimental to a pipelined processor's performance. To mitigate these stalls, various branch prediction techniques are used.
 In this project, I implemented various branch predictors, a two level Global History Branch predictor (GShare), a two level Local History predictor (Yeh-Patt),
-and finally a perceptron branch predictor. I models a Pattern table (Smith Counters), or perceptron table, and a global history register or history table depending on the 
+and finally a perceptron branch predictor. I modeled a Pattern table (Smith Counters), or perceptron table, and a global history register or history table depending on the 
 predictor being simulated.
 
 ##### The GShare Predictor
