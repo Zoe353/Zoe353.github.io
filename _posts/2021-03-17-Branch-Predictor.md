@@ -54,5 +54,5 @@ If sign(y) != t or abs(s) <= theta, we should update each w<sub>i</sub> by w<sub
 and then shift the global history register.
 
 ###### Reference  
-Project2 in CS6290 Advanced/High performance computing architecture
+Project2 in Advanced/High performance computing architecture
 
