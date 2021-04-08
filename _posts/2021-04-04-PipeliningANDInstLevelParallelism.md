@@ -4,7 +4,7 @@ title: "Review for Exam2: Pipelining (N4) and Instructioon Level Parallelism (N5
 markdown: kramdown
 date: 2021-04-04
 ---
-##### Pipelining (N4)
+#### Pipelining (N4)
 a)	Example Pipeline: what IF, ID, EX, MEM, WB do  
 Instruction fetch (IF)  
 Instruction Decode (ID)  
@@ -34,12 +34,12 @@ For example: we now have a unified I/D cache, then in some pipeline, instruction
 
 f)	Data Hazards & Solutions
 * Data dependencies (pure, anti-, output dependencies) vs. Data hazards (RAW, WAR, WAW) - Know difference between these!  
-|    | Data Dependecies | Data Hazard |  
-|----|:----:|:----:|  
-|    |Pure/Flow Dependencies|RAW (read after write) |  
-|    |Anti- Dependencies    |WAR (write after read) |  
-|    |Output Dependencies   |WAW (write after write)|  
-|Dependencies | Dependencies are program behavior | Hardware |  
+| Data Dependecies | Data Hazard |  
+|:----:|:----:|  
+|Pure/Flow Dependencies|RAW (read after write) |  
+|Anti- Dependencies    |WAR (write after read) |  
+|Output Dependencies   |WAW (write after write)|  
+| Dependencies are program behavior | Hardware |  
 
 * Pipeline forwarding (also called "register file bypass"")  
 Instead of instruction only reading register value in the instruction decode stage, 
@@ -113,7 +113,7 @@ g)	Control Hazards & Solutions
         <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/Perceptron2.png">  
         <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/PerceptronExample.png">
 
-##### Instruction-Level Parallelism (N5)
+#### Instruction-Level Parallelism (N5)
 a)	Limitations of pipelining – going beyond CPI = 1  
 If we could design the pipeline really well, we could have low CT and CPI is approximately 1 (CPU Time=IC ×CPI×CT). 
 However, can we achieve that CPI less than 1?  
@@ -221,7 +221,7 @@ d) Dispatch and Scheduling
     * RAT/Preg approach: how it operates  
     
     ```
-    // [Dispatch unit]
+    [Dispatch unit]
     For all instructions I in DispQ do:
 	    if (SchedQ is not full AND there are free Pregs) then
             Add I to first free slot of SchedQ (= “RS”)
@@ -234,7 +234,7 @@ d) Dispatch and Scheduling
             Regs[RAT[I.Dest]].Ready = False
 		else exit loop // stop dispatching if scheduling queue is full or there are no free Pregs
 	
-	// [Scheduling unit]
+	[Scheduling unit]
      for each RS = entry in SchedQueue do:
         If (Regs[RS.SRC[0]] = True AND Regs[RS.SRC[1]] = True AND Scoreboard[RS.FU].Busy = False) then
             Scoreboard[RS.FU].Busy = True // …reserve the FU and issue
