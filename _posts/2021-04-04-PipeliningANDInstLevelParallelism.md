@@ -218,7 +218,7 @@ d) Dispatch and Scheduling
         * Function unit
         * CDB: common data bus
         * Register file: register file is only updated with the dispatcher
-    * RAT/Preg approach: how it operates
+    * RAT/Preg approach: how it operates  
     ```
     // [Dispatch unit]
     For all instructions I in DispQ do:
