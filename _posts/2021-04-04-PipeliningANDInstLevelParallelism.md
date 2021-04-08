@@ -269,7 +269,7 @@ d) Dispatch and Scheduling
         * Problem:
             * Comparators are expensive
             * ROB now similar to fully-associative cache: a cycle time stretcher
-        * Algorithm
+        * Algorithm  
         <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/TomasuloROBBypass1.png">  
         <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/TomasuloROBBypass2.png">      
     * Future file - Solution #2: ROB w/Future File   
