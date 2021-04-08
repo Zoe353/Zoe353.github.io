@@ -11,12 +11,12 @@ Instruction Decode (ID)
 Execute (EX)  
 MEM (Reading/Writing Memory)  
 WB (Status update in regs file)  
-<img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/Pipeline.png">
+<img  class="img-content" alt="Zhimin Sun" width="500"  src="/assets/img/Pipeline.png">  
 b)  Pipeline speedup calculation
 Speedup = (execution time unpipelined)/(execution time pipelined)  
-     	=(IC ×〖CPI〗_(unpipelined )×CT)/(IC×〖CPI〗_pipelined×CT)
-        =〖CPI〗_unpipelined/〖CPI〗_pipelined 
-            =〖CPI〗_unpipelined/(〖CPI〗_pipelined/N+latching)  
+     	=(IC ×CPI<sub>unpipelined</sub>×CT)/(IC×CPI<sub>pipelined</sub>×CT)  
+        =CPI<sub>unpipelined</sub>/CPI<sub>pipelined</sub>   
+        =CPI<sub>unpipelined</sub>/(CPI<sub>unpipelined</sub>/N+latching)    
 Now, more generally speaking, when we have N stage pipeline, speedup = N. In the reality, this is not 100 percent feasible, it works in our simplified approach where we assume that time for latching is 0.  
 
 c)	CPI = 1 + stalls, where stalls is average stall cycles per instruction
@@ -34,12 +34,12 @@ For example: we now have a unified I/D cache, then in some pipeline, instruction
 
 f)	Data Hazards & Solutions
 * Data dependencies (pure, anti-, output dependencies) vs. Data hazards (RAW, WAR, WAW) - Know difference between these!  
-|    | Data Dependecies | Data Hazard |
-|----|:----:|:----:|
-|    |Pure/Flow Dependencies|RAW (read after write) |
-|    |Anti- Dependencies    |WAR (write after read) |
-|    |Output Dependencies   |WAW (write after write)|
-|Dependencies | Dependencies are program behavior | Hardware |
+|    | Data Dependecies | Data Hazard |  
+|----|:----:|:----:|  
+|    |Pure/Flow Dependencies|RAW (read after write) |  
+|    |Anti- Dependencies    |WAR (write after read) |  
+|    |Output Dependencies   |WAW (write after write)|  
+|Dependencies | Dependencies are program behavior | Hardware |  
 
 * Pipeline forwarding (also called "register file bypass"")  
 Instead of instruction only reading register value in the instruction decode stage, 
@@ -52,7 +52,7 @@ Forwarding is also called register bypass (bypass #1 (from EX), bypass #2 (from 
 "Load use" hazard: Assume the data cache hit is 1 cycle. We can see that in the LW instruction, R1 value is available 
 after accessing MEM; while in the ADD instruction, R1 value is needed in the ID stage. Thus, there still needs stall.  
 For example: LW R1, 0(R2)  
-           ADD R4, R1, R5  
+                ADD R4, R1, R5  
 Feature the hazard – Load delay slot: Tell programmer load values are not available until after the next instruction.
 
 g)	Control Hazards & Solutions 
@@ -62,23 +62,23 @@ g)	Control Hazards & Solutions
     "Featuring" the bug using Machine/Assembly language: A branch doesn’t take effect until 1 after the next instruction.  
     In computer architecture, delay slot is an instruction slot being executed without the effects of a preceding instruction.  
     For example, we fill a delay slot from branch target.  
-    <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/DelaySlot.png">
+    <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/DelaySlot.png">  
     If the branch is actually not taken, then we should not execute SUB; if the branch is taken, then it’s fine.  
     Although it looks like a good idea to fill the delay slot from the target of the branch, I now have to tell the hardware 
     whether or not I think I’m going to branch. So, I need to come up a way to inform the hardware whether or not SUB need to be squashed.  
     Squash slots with likely bits:  
     There are two kinds of branches:  
          BREQ-likely R1, H; BREQ-unlikely R1, G  
-         if likely bit = 1, squash slots when branch is not taken  
-         if likely bit = 0, squash slots when branch is taken  
-    * Branch Target Buffer (BTB) & Hardware return address stack
+         * if likely bit = 1, squash slots when branch is not taken  
+         * if likely bit = 0, squash slots when branch is taken  
+    * Branch Target Buffer (BTB) & Hardware return address stack  
     Branch target buffer (BTB), instead of using tag comparison, I just took the PC. I take some bits from PC, for example 
     {12:4}, let's assume that my hash function gives me unique entry in this table.  
     There's a valid bit, if valid bit is 0, don’t branch; if valid bit is 1, use the target address.  
-    <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/BranchTargetBuffer.png">  
+    <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/BranchTargetBuffer.png">  
     You can assume that the target accessed last time will be accessed again, but there is a problem in return. Where it needs to return, it depends the calling function.  
     Using return bit, if return = 1, use hardware return address stack instead of branch target buffer: on call – push, on return – pop.  
-    <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/AddrReturnStack.png">  
+    <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/AddrReturnStack.png">  
 * Issues in WHETHER
     * Software: Heuristics (eg, backward taken, forward not taken)  
     Methods to set likely bit  
@@ -89,7 +89,7 @@ g)	Control Hazards & Solutions
         * 1-bit (valid bit in BTB)  
         There's a valid bit in BTB, if valid bit is 0, don’t branch; if valid bit is 1, use the target address.
         * Smith 2-bit counter  
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/SmithCounter.png">  
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/SmithCounter.png">  
         Problem with Smith 2-bit counter: could have 100% misprediction.   
         However, some branches are correlated with other branches. If we could capture the correlation (global history register), then we can do something.
         * Gselect, Gshare  
@@ -97,7 +97,7 @@ g)	Control Hazards & Solutions
             GHR (Global history register): records the previous history (0-N, 1-T)  
             2-D array, Prediction [GHR][PC];  
             Update the counter using the actual behavior;  
-            <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/GselectExample.png">
+            <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/GselectExample.png">
         Gshare: take a step further from Gselect  
             GHR XOR PC, 2-D array stored as a 1-D array  
             <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/GShare.PNG">
@@ -105,13 +105,13 @@ g)	Control Hazards & Solutions
          History Table, each entry is a shift register  
          Pattern Table, each entry is a 2-bit Smith Counter  
          <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/Yeh-Patt.PNG">  
-         <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/YehPattExample.png">
+         <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/YehPattExample.png">
          PC->Find an entry in History Table -> Find an entry in Pattern Table  
         * Perceptron
         Not taken as -1, Taken as 1  
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/Perceptron1.png">  
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/Perceptron2.png">  
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/PerceptronExample.png">
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/Perceptron1.png">  
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/Perceptron2.png">  
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/PerceptronExample.png">
 
 ##### Instruction-Level Parallelism (N5)
 a)	Limitations of pipelining – going beyond CPI = 1  
@@ -142,7 +142,7 @@ d) Dispatch and Scheduling
 * FICO algorithm (in-order issue)
     * FICO example execution  
     ```
-    // Dispatch/Scheduling Unit
+    // [Dispatch/Scheduling Unit]
     For each Inst in Scheduling Queue do:
 	    if(!Regs[Inst.Src1].Busy AND !Regs[Inst.Src2].Busy AND !Regs[Inst.Dest].Busy AND !Scoreboard[Inst.FU].Busy)
 	    then //Fire Instruction
@@ -150,7 +150,7 @@ d) Dispatch and Scheduling
 		    Regs[Inst.Dest].Busy = True  
         Else
             exit loop // halt issuing for this cycle
-    // Execution unit at completion of Inst
+    // [Execution unit at completion of Inst]
     Regs[Inst.Dest].Busy = False
     If(Inst.FU advances and first stage is free)
         Scoreboard[Inst.FU].Busy = False
@@ -199,11 +199,11 @@ d) Dispatch and Scheduling
     if (CDB.Busy = False) then 
         CDB.Busy = True
         CDB.Tag = I.Tag
-		CDB.Value = I.Value
-		CBD.Reg = I.Reg
-		if (I.FU is not pipelined) then
-			Scoreboard[RS.FU] = False
-		Delete I from Sched Queue
+        CDB.Value = I.Value
+        CBD.Reg = I.Reg
+        if (I.FU is not pipelined) then
+            Scoreboard[RS.FU] = False
+        Delete I from Sched Queue
 	 // [Register file]
 	if (CDB.Busy = True and CDB.Tag = Regs[CDB.Tag]) then 
 		Regs[CDB.Reg].Ready = True // Update the RF contents
@@ -220,7 +220,7 @@ d) Dispatch and Scheduling
         * Register file: register file is only updated with the dispatcher
     * RAT/Preg approach: how it operates
     ```
-    [Dispatch unit]
+    // [Dispatch unit]
     For all instructions I in DispQ do:
 	    if (SchedQ is not full AND there are free Pregs) then
             Add I to first free slot of SchedQ (= “RS”)
@@ -233,7 +233,7 @@ d) Dispatch and Scheduling
             Regs[RAT[I.Dest]].Ready = False
 		else exit loop // stop dispatching if scheduling queue is full or there are no free Pregs
 	
-	[Scheduling unit]
+	// [Scheduling unit]
      for each RS = entry in SchedQueue do:
         If (Regs[RS.SRC[0]] = True AND Regs[RS.SRC[1]] = True AND Scoreboard[RS.FU].Busy = False) then
             Scoreboard[RS.FU].Busy = True // …reserve the FU and issue
@@ -269,17 +269,17 @@ d) Dispatch and Scheduling
             * Comparators are expensive
             * ROB now similar to fully-associative cache: a cycle time stretcher
         * Algorithm
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/TomasuloROBBypass1.png">  
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/TomasuloROBBypass2.png">      
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/TomasuloROBBypass1.png">  
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/TomasuloROBBypass2.png">      
     * Future file - Solution #2: ROB w/Future File   
-    <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/ROBWFutureFile.png">  
+    <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/ROBWFutureFile.png">  
     Changes vs. ROB w/bypass are:
         * Keep the original Tomasulo register file (called “messy”)
         * Completing instructions broadcast on CDB and update the messy RF as in original Tomasulo algorithm
         * Dispatch checks “messy” register file (future file) just like original Tomasulo algorithm.
         * Before exception handling, architectural register file is copied to messy register file
     * Using the ROB to free Pregs in RAT/Preg  
-    <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/FreePreg.png">  
+    <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/FreePreg.png">  
         * When instruction reaches head of ROB, copy Preg to corresponding Areg
         * On exception, change RAT to point to corresponding Aregs
     ```
@@ -293,7 +293,7 @@ d) Dispatch and Scheduling
         Free ROB[head].Prev_Preg
     ```
     * Checkpoint repair - Solution #3: Checkpoint repair  
-        <img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/CheckpointRepair.png"> 
+        <img  class="img-content" alt="Zhimin Sun" width="400"  src="/assets/img/CheckpointRepair.png"> 
         * CDB (Common data bus): normally write to the messy register file (Tomasulo register file)
         * Messy Register File
         * Backup (backup1): CDB selectively write into backup1 on the completion of instruction based on whether 
@@ -304,7 +304,7 @@ d) Dispatch and Scheduling
             * If an exception occurs, copy Backup2 to messy and resume at IB2 for Backup2 after exception.         
 
 ###### Attach a beautiful photo I took yesterday afternoon :)  
-<img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/04062021Sky.png"> 
+<img  class="img-content" alt="Zhimin Sun" width="600"  src="/assets/img/04062021Sky.jpg"> 
         
 
 
