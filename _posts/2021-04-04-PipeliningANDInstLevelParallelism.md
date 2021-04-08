@@ -219,6 +219,7 @@ d) Dispatch and Scheduling
         * CDB: common data bus
         * Register file: register file is only updated with the dispatcher
     * RAT/Preg approach: how it operates  
+    
     ```
     // [Dispatch unit]
     For all instructions I in DispQ do:
@@ -254,7 +255,7 @@ d) Dispatch and Scheduling
             Regs[CDB.Preg].Ready = True  // Update the RF contents
             Regs[CDB.Preg].Value = CDB.Value //Update the Preg
             CDB.Busy = False
-    ```
+     ```
 * State update
     * What the problem is: imprecise interrupts  
     No consistent state
