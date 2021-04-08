@@ -35,10 +35,10 @@ For example: we now have a unified I/D cache, then in some pipeline, instruction
 f)	Data Hazards & Solutions
 * Data dependencies (pure, anti-, output dependencies) vs. Data hazards (RAW, WAR, WAW) - Know difference between these!  
 | Data Dependecies | Data Hazard |  
-|:----:|:----:|  
-|Pure/Flow Dependencies|RAW (read after write) |  
-|Anti- Dependencies    |WAR (write after read) |  
-|Output Dependencies   |WAW (write after write)|  
+| :-------: | :------: |  
+| Pure/Flow Dependencies | RAW (read after write) |  
+| Anti- Dependencies    | WAR (write after read) |  
+| Output Dependencies   | WAW (write after write)|  
 | Dependencies are program behavior | Hardware |  
 
 * Pipeline forwarding (also called "register file bypass"")  
