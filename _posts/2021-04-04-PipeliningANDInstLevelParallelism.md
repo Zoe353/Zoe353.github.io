@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review for Exam2: Pipelining (N4) and Instructioon Level Parallelism (N5)"
+title: "Review for Exam2 (Computer Architecture): Pipelining (N4) and Instructioon Level Parallelism (N5)"
 markdown: kramdown
 date: 2021-04-04
 ---
