@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Project4 - Cache Coherence"
+title: "Project4 (Computer Architecture) - Cache Coherence"
 markdown: kramdown
 date: 2021-04-22
 ---

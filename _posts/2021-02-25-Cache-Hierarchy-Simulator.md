@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cache Hierarchy Simulator"
+title: "Project1 (Computer Architecture) - Cache Hierarchy Simulator"
 markdown: kramdown
 date: 2021-02-25
 ---

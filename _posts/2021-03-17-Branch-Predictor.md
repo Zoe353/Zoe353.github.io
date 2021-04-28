@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Branch Predictor"
+title: "Project2 (Computer Architecture) - Branch Predictor"
 markdown: kramdown
 date: 2021-03-17
 ---
